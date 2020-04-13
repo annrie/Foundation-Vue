@@ -11,7 +11,7 @@ This repository is the simplest example of how to use [Vue single page applicati
 ## Motivation for development
 
 I wanted to work with the Foundation framework and Vue.JS.
-First of all, it was created for beginners of VueJS. Basically, the main focus is to help you understand how to add VueJS to the template created by the `foundation new`(This command is limited to node V.10, but this repository has no problem with node V.12).
+First of all, it was created for beginners of VueJS. Basically, the main focus is to help you understand how to add VueJS to the template created by the `foundation new`(This is a command you don't need if you want to use the repository.).
 It's like this.
 
 ```bash
@@ -48,7 +48,7 @@ Finally, run `npm start` or `yarn start` to run Gulp. The finished site will be 
 http://localhost:8000
 ```
 
-To create a compressed, ready-to-use asset, run `npm run build` or `yarn run build`.
+To create a compressed, ready-to-use asset, run `npm run build` or `yarn build`.
 
 ## acknowledgement
 
