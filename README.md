@@ -53,7 +53,7 @@ To create a compressed, ready-to-use asset, run `npm run build` or `yarn build`.
 ## acknowledgement
 
 - [Adding Vue.js to Foundation's ZURB Stack](https://zendev.com/2018/04/18/adding-vue-files-to-foundation-template.html) was very helpful. Normally, it should be folk, but there were too many changes, so I decided to launch a new one.
-- The components pages of [vue-foundation](git@github.com:vue-foundation/vue-foundation.git) are also available in this repository. Thank you.
+- The components pages of [vue-foundation](https://github.com/vue-foundation/vue-foundation) are also available in this repository. Thank you.
 - The animation of the top page is based on the work of [yui540](https://twitter.com/yui540). I would like to thank you also.
 
 ## License

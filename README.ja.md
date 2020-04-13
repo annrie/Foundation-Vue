@@ -53,7 +53,7 @@ http://localhost:8000
 ## 謝辞
 
 - [Adding Vue.js to Foundation's ZURB Stack](https://zendev.com/2018/04/18/adding-vue-files-to-foundation-template.html)が大変参考になりました。本来は folk するべきなのでしょうが、変更点があまりにも多くなったため新規に立ち上げることにしました。
-- [vue-foundation](git@github.com:vue-foundation/vue-foundation.git)の components の各ページは、本リポジトリでも利用させていただいています。感謝します。
+- [vue-foundation](https://github.com/vue-foundation/vue-foundation)の components の各ページは、本リポジトリでも利用させていただいています。感謝します。
 - トップページのアニメーションは、[yui540](https://twitter.com/yui540)さんの諸作を参考にさせていただきました。併せて感謝いたします。
 
 ## ライセンス
