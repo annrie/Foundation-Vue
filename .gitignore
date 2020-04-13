@@ -1,0 +1,18 @@
+.DS_Store
+node_modules
+npm-debug.log
+bower_components
+dist
+yarn-error.log
+*.swp
+.*cache*
+.idea
+.vscode
+
+# Yarn2
+.yarn/cache
+.yarn/unplugged
+.yarn/build-state*.yml
+.yarn/releases/yarn-sources\ *.js
+.pnp.*
+
