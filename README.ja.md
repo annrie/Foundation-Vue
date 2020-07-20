@@ -38,8 +38,9 @@ npm も使えますが、[yarn2](https://yarnpkg.com/getting-started/install) �
 ＃ install dependencies
 npm install
 or
-yarn set version berry # yarn2のセットアップ
-yarn
+npx @yarnpkg/doctor # yarn2のセットアップ
+echo "nodeLinker: node-modules" > .yarnrc.yml
+yarn install
 ```
 
 最後に、 `npm start` あるいは、 `yarn start` を実行して Gulp を実行します。 完成したサイトは、次の URL で表示可能な `dist`というフォルダーに作成されます。

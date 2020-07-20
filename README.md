@@ -38,8 +38,9 @@ You can also use NPM, but I'm using [yarn2](https://yarnpkg.com/getting-started/
 # install dependencies
 npm install
 or
-yarn set version berry # Setup of yarn2
-yarn
+npx @yarnpkg/doctor # yarn2のセットアップ
+echo "nodeLinker: node-modules" > .yarnrc.yml
+yarn install
 ```
 
 Finally, run `npm start` or `yarn start` to run Gulp. The finished site will be created in a folder named `dist` which can be viewed at the following URL.
