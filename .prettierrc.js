@@ -1,13 +1,15 @@
-'use strict'
+"use strict";
 
 module.exports = {
-  printWidth: 80,
+  printWidth: 100,
   tabWidth: 2,
   useTabs: false,
   semi: false,
   singleQuote: true,
-  trailingComma: 'es5',
+  trailingComma: "es5",
   bracketSpacing: false,
-  arrowParens: 'always',
-  htmlWhitespaceSensitivity: 'ignore',
-}
+  endOfLine: "lf",
+  arrowParens: "always",
+  htmlWhitespaceSensitivity: "ignore",
+  vueIndentScriptAndStyle: true,
+};

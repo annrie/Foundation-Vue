@@ -2,27 +2,13 @@
   <div>
     <div class="only-top">
       <div>{{ $mq }}サイズ</div>
-      <div v-if="small">
-        smallサイズ
-      </div>
-      <div v-else-if="medium">
-        mediumサイズ
-      </div>
-      <div v-else-if="tablet">
-        tabletサイズ
-      </div>
-      <div v-else-if="largePlus">
-        large+サイズ
-      </div>
-      <div v-else-if="large">
-        largeサイズ
-      </div>
-      <div v-else-if="xlarge">
-        xlargeサイズ
-      </div>
-      <div v-else>
-        xxlargeサイズ
-      </div>
+      <div v-if="small">smallサイズ</div>
+      <div v-else-if="medium">mediumサイズ</div>
+      <div v-else-if="tablet">tabletサイズ</div>
+      <div v-else-if="largePlus">large+サイズ</div>
+      <div v-else-if="large">largeサイズ</div>
+      <div v-else-if="xlarge">xlargeサイズ</div>
+      <div v-else>xxlargeサイズ</div>
     </div>
     <div>window width: {{ windowWidth }} px</div>
     <div>window height: {{ windowHeight }} px</div>
@@ -98,7 +84,7 @@ export default {
   },
   methods: {
     calculateWindowWidth() {
-      // resizeのたびに発火する
+      // Every time you resize it, it fires.
       this.windowWidth = window.innerWidth;
     },
     calculateWindowHeight() {

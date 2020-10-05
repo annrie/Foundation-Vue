@@ -4,6 +4,7 @@ plugins:
 extends:
   - stylelint-config-standard-scss
   - stylelint-config-recess-order
+  - stylelint-config-prettier
   - stylelint-prettier/recommended
 syntax:
   - scss
@@ -14,7 +15,7 @@ rules:
   scss/operator-no-unspaced: true
   scss/at-rule-no-unknown: true
   # at-rule-no-unknown: null
-  at-rule-whitelist:
+  at-rule-allowed-list:
     [
       "extend",
       "keyframes",
@@ -33,6 +34,9 @@ rules:
       "function",
       "return",
       "warn",
+      "get-color",
+      "scale-color",
+      "each",
     ]
   at-rule-no-unknown: null
   at-rule-no-vendor-prefix: true # @ルールのベンタープリフィックス禁止
@@ -52,7 +56,6 @@ rules:
   comment-empty-line-before: always
   function-comma-space-after: always
   function-parentheses-space-inside: never
-  declaration-block-single-line-max-declarations: 3
   declaration-colon-space-after: always-single-line
   declaration-colon-space-before: never
   declaration-colon-newline-after: always-multi-line # 複数行の時のコロン後には改行が必須
@@ -81,17 +84,22 @@ rules:
   block-opening-brace-space-before: always # 単一行で閉じ括弧前に空白を必須
   block-opening-brace-space-after: always-single-line #単一行の時に閉じ括弧後に空白を必須
   block-closing-brace-empty-line-before: never
+  selector-type-no-unknown: [
+    true,
+    { ignoreTypes: ['_', 'x']}
+  ]
   rule-empty-line-before: never
   function-max-empty-lines: 0
   max-empty-lines: 1
   selector-max-empty-lines: 0
-  at-rule-blacklist: ["debug"]
-  declaration-property-value-blacklist: [{ "/^border/": ["none"] }]
+  at-rule-disallowed-list: ["debug"]
+  # declaration-property-value-blacklist: [{'/^border/': ['none']}]
+  declaration-property-value-blacklist: null
   color-named: null
   color-no-hex: null
   color-no-invalid-hex: true
   # function-blacklist: ["/^rgb/", "/^hsl/"]
-  function-whitelist:
+  function-allowed-list:
     [
       "my-color",
       "/^rem/",
@@ -115,28 +123,17 @@ rules:
       /translateY/,
       /translateX/,
       /translate3d/,
-      calc,
+      /calc/,
+      /map-merge/,
+      /translate/,
     ]
-  unit-whitelist:
-    [
-      "em",
-      "rem",
-      "%",
-      "s",
-      "ms",
-      "vh",
-      "vw",
-      "px",
-      "deg",
-      "dpi",
-      "vmin",
-      "turn",
-    ]
+  unit-allowed-list:
+    ["em", "rem", "%", "s", "ms", "vh", "vw", "px", "deg", "dpi", "fr", "vmin", "turn"]
   selector-pseudo-class-no-unknown: [true, { ignorePseudoClasses: [global] }]
   declaration-no-important: null
   font-family-no-duplicate-names: true
   function-calc-no-invalid: true
-  max-nesting-depth: 6
+  max-nesting-depth: 10
   unit-case: lower
   unit-no-unknown:
     - true

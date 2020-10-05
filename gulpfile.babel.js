@@ -14,7 +14,9 @@ import fs from "fs";
 import webpackStream from "webpack-stream";
 import webpack2 from "webpack";
 import named from "vinyl-named";
+// eslint-disable-next-line no-unused-vars
 import uncss from "uncss";
+// eslint-disable-next-line no-unused-vars
 import gulpSass from "gulp-sass";
 import gulpStylelint from "gulp-stylelint";
 import changed from "gulp-changed-in-place";
@@ -28,6 +30,7 @@ const $ = plugins();
 const PRODUCTION = !!yargs.argv.production;
 
 // Load settings from settings.yml
+// eslint-disable-next-line no-unused-vars
 const { PORT, UNCSS_OPTIONS, PATHS } = loadConfig();
 
 function loadConfig() {
@@ -270,6 +273,7 @@ function server(done) {
 }
 
 // Reload the browser with BrowserSync
+// eslint-disable-next-line no-unused-vars
 function reload(done) {
   browser.reload();
   done();

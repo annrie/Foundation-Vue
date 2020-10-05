@@ -1,4 +1,5 @@
 module.exports = {
+  root: true,
   env: {
     browser: true,
     node: true,
@@ -13,10 +14,10 @@ module.exports = {
     $: true,
     _: true,
   },
-  parser: "vue-eslint-parser",
+  // parser: "vue-eslint-parser",
   parserOptions: {
     parser: "babel-eslint",
-    ecmaVersion: 2018,
+    ecmaVersion: 2020,
     sourceType: "module",
     allowImportExportEverywhere: false,
     ecmaFeatures: {
@@ -25,18 +26,15 @@ module.exports = {
       jsx: true,
     },
   },
-  plugins: ["vue"],
+  // plugins: ["vue"],
   extends: [
     "plugin:vue/recommended",
     "eslint:recommended",
-    "prettier/vue",
-    "plugin:import/errors",
-    "plugin:import/warnings",
-    "plugin:prettier/recommended",
+    // '@vue/typescript/recommended',
+    "@vue/prettier",
     // 'prettier',
-    // '@nuxtjs',
-    // 'standard',
-    // 'plugin:nuxt/recommended',
+    // 'prettier/vue'
+    // '@vue/prettier/@typescript-eslint',
   ],
   // required to lint *.vue files
   settings: {
@@ -49,13 +47,15 @@ module.exports = {
     "no-console": process.env.NODE_ENV === "production" ? "error" : "off",
     "no-debugger": process.env.NODE_ENV === "production" ? "error" : "off",
     // // タグの最後で改行しないで
-    // 'vue/html-closing-bracket-newline': [
-    //   0,
-    //   {multiline: 'never', singleline: 'never'},
-    // ],
+    "vue/html-closing-bracket-newline": [
+      0,
+      { multiline: "never", singleline: "never" },
+    ],
+    "vue/html-indent": "off",
     // 'vue/valid-v-on': 1,
-    // 'vue/max-attributes-per-line': 0,
-    // 'vue/html-self-closing': 0,
+    "vue/max-attributes-per-line": 0,
+    "vue/html-self-closing": 0,
+    "vue/one-component-per-file": 0,
     // 'vue/this-in-template': ['warn', 'never'],
     // // 不要なカッコは消す
     // 'no-extra-parens': 1,
