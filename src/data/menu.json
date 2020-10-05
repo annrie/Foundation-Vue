@@ -2,23 +2,19 @@
   "parent-nav": [
     {
       "category": "Home",
-      "link": "index",
-      "sub": false
+      "link": "index"
     },
     {
       "category": "Reveal",
-      "link": "Reveal",
-      "sub": false
+      "link": "Reveal"
     },
     {
       "category": "Slider",
-      "link": "Slider",
-      "sub": false
+      "link": "Slider"
     },
     {
       "category": "Tooltip",
-      "link": "Tooltip",
-      "sub": false
+      "link": "Tooltip"
     },
     {
       "category": "Menus",
@@ -27,45 +23,37 @@
     },
     {
       "category": "Magellan",
-      "link": "Magellan",
-      "sub": false
+      "link": "Magellan"
     },
     {
       "category": "Accordion",
-      "link": "Accordion",
-      "sub": false
+      "link": "Accordion"
     },
     {
       "category": "Dropdown",
-      "link": "Dropdown",
-      "sub": false
+      "link": "Dropdown"
     },
     {
       "category": "Tabs",
-      "link": "Tabs",
-      "sub": false
+      "link": "Tabs"
     },
     {
       "category": "Orbit",
-      "link": "Orbit",
-      "sub": false
+      "link": "Orbit"
     }
   ],
   "sub-nav": [
     {
       "category": "Dropdown Menu",
-      "link": "DropdownMenu",
-      "sub": false
+      "link": "DropdownMenu"
     },
     {
       "category": "Drilldown Menu",
-      "link": "DrilldownMenu",
-      "sub": false
+      "link": "DrilldownMenu"
     },
     {
       "category": "Accordion Menu",
-      "link": "AccordionMenu",
-      "sub": false
+      "link": "AccordionMenu"
     }
   ]
 }
