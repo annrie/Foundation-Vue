@@ -38,7 +38,7 @@ You can also use NPM, but I'm using [yarn2](https://yarnpkg.com/getting-started/
 # install dependencies
 npm install
 or
-npx @yarnpkg/doctor # yarn2のセットアップ
+npx @yarnpkg/doctor # Setup for yarn2
 echo "nodeLinker: node-modules" > .yarnrc.yml
 yarn install
 ```
