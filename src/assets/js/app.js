@@ -4,12 +4,12 @@ import whatInput from "what-input";
 
 import Vue from "vue";
 import vueCustomElement from "vue-custom-element";
-// import LogoElement from "logo-element";
+// import LogoElement from 'logo-element';
 
-import MyCustomElement from "./my-custom-element";
-import MyLogoElement from "./logo-element";
-import VueSlider from "./vue-method-slider";
-import WindowSizeElement from "./window-size-element";
+import MyCustomElement from "./MyCustomElement";
+import MyLogoElement from "./LogoElement";
+import VueSlider from "./VueMethodSlider";
+import WindowSizeElement from "./WindowSizeElement";
 
 Vue.use(vueCustomElement);
 

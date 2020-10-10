@@ -8,6 +8,7 @@ yarn-error.log
 .*cache*
 .idea
 .vscode
+.history
 
 # Yarn2
 .yarn/cache

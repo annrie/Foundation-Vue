@@ -1,14 +1,14 @@
 <template>
   <div>
     <div class="only-top">
-      <div>{{ $mq }}サイズ</div>
-      <div v-if="small">smallサイズ</div>
-      <div v-else-if="medium">mediumサイズ</div>
-      <div v-else-if="tablet">tabletサイズ</div>
-      <div v-else-if="largePlus">large+サイズ</div>
-      <div v-else-if="large">largeサイズ</div>
-      <div v-else-if="xlarge">xlargeサイズ</div>
-      <div v-else>xxlargeサイズ</div>
+      <div>{{ $mq }} size</div>
+      <div v-if="small">small size</div>
+      <div v-else-if="medium">medium size</div>
+      <div v-else-if="tablet">tablet size</div>
+      <div v-else-if="largePlus">large+ size</div>
+      <div v-else-if="large">large size</div>
+      <div v-else-if="xlarge">xlarge size</div>
+      <div v-else>xxlarge size</div>
     </div>
     <div>window width: {{ windowWidth }} px</div>
     <div>window height: {{ windowHeight }} px</div>
@@ -32,20 +32,22 @@ Vue.use(VueMq, {
   defaultBreakpoint: "small",
 });
 
+// eslint-disable-next-line vue/one-component-per-file
 Vue.mixin({
   data() {
     return {
-      small: false, // until 640px
-      medium: false, // until 769px
-      tablet: false, // from 1025px
-      largePlus: false, // from 1025px and until 1201px
-      large: false, // from 1025px
-      xlarge: false, // from 1201px
-      xxlarge: false, // from 1441px
+      small: false,
+      medium: false,
+      tablet: false,
+      largePlus: false,
+      large: false,
+      xlarge: false,
+      xxlarge: false,
     };
   },
 });
 
+// eslint-disable-next-line vue/one-component-per-file
 export default {
   data() {
     return {

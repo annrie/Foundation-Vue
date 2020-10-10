@@ -1,28 +1,33 @@
 <template>
   <div class="grid-x grid-margin-x">
-    <div class="cell small-10">
+    <div class="cell small-12 medium-10">
       <div
         id="slider"
         :data-initial-start="dataValue"
         :data-end="dataEnd"
         class="slider"
         data-slider
+        data-step="1"
+        data-position-value-function="log"
+        data-non-linear-base="5"
       >
         <span
           class="slider-handle"
           data-slider-handle
           role="slider"
           tabindex="1"
-        />
-        <span class="slider-fill" data-slider-fill />
-        <input type="hidden" class="slider-input" />
+          aria-controls="sliderOutputNonLinear"
+        ></span>
+        <!--span class="slider-fill" data-slider-fill></span>
+        <input type="hidden" class="slider-input" /-->
       </div>
     </div>
-    <div class="cell small-2">
-      <input v-model="dataValue" type="number" />
+    <div class="cell small-12 medium-2">
+      <input id="sliderOutputNonLinear" v-model="dataValue" type="number" />
     </div>
   </div>
 </template>
+
 <script>
 import $ from "jquery";
 export default {

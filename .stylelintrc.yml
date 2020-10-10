@@ -15,7 +15,7 @@ rules:
   scss/operator-no-unspaced: true
   scss/at-rule-no-unknown: true
   # at-rule-no-unknown: null
-  at-rule-allowed-list:
+  at-rule-whitelist:
     [
       "extend",
       "keyframes",
@@ -99,7 +99,7 @@ rules:
   color-no-hex: null
   color-no-invalid-hex: true
   # function-blacklist: ["/^rgb/", "/^hsl/"]
-  function-allowed-list:
+  function-whitelist:
     [
       "my-color",
       "/^rem/",
@@ -127,7 +127,7 @@ rules:
       /map-merge/,
       /translate/,
     ]
-  unit-allowed-list:
+  unit-whitelist:
     ["em", "rem", "%", "s", "ms", "vh", "vw", "px", "deg", "dpi", "fr", "vmin", "turn"]
   selector-pseudo-class-no-unknown: [true, { ignorePseudoClasses: [global] }]
   declaration-no-important: null

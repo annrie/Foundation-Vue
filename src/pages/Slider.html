@@ -12,19 +12,27 @@ description: Slider sample page.
       <h2>Foundation way</h2>
       <div class="grid-x grid-margin-x">
         <div class="cell small-10">
-          <div class="slider" data-slider data-initial-start="50">
+          <div class="slider"
+            data-slider
+            data-initial-start="50"
+            data-end="100"
+            data-step="10"
+            data-position-value-function="log"
+            data-non-linear-base="5">
             <span
               class="slider-handle"
               data-slider-handle
               role="slider"
               tabindex="1"
-              aria-controls="sliderOutput1"
+              aria-controls="sliderOutput"
             ></span>
-            <span class="slider-fill" data-slider-fill></span>
+            <!-- <span class="slider-fill" data-slider-fill></span> -->
           </div>
         </div>
         <div class="cell small-2">
-          <input type="number" id="sliderOutput1" />
+      <input id="sliderOutput"
+        v-model="dataValue"
+        type="number" />
         </div>
       </div>
     </div>
