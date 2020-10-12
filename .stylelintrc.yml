@@ -92,7 +92,7 @@ rules:
   function-max-empty-lines: 0
   max-empty-lines: 1
   selector-max-empty-lines: 0
-  at-rule-disallowed-list: ["debug"]
+  at-rule-blacklist: ["debug"]
   # declaration-property-value-blacklist: [{'/^border/': ['none']}]
   declaration-property-value-blacklist: null
   color-named: null

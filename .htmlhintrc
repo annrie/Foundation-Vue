@@ -12,7 +12,7 @@
   "doctype-html5": false,
   "id-class-value": false,
   "style-disabled": false,
-  "inline-style-disabled": true,
+  "inline-style-disabled": false,
   "space-tab-mixed-disabled": false,
   "attr-unsafe-chars": true
 }
