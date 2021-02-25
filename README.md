@@ -20,11 +20,15 @@ It's like this.
 </div>
 ```
 
+## Requirements
+
+**This project requires [Node.js](http://nodejs.org) <=v12.1.0 and v14.15.5<= is recommended.** Please be aware that you might encounter problems with the installation if you are using the most current Node version (bleeding edge) with all the latest features.
+
 ## Setup
 
 To set up the template manually, first download it in Git: the
 
-```bash {.copy}
+```bash
 git clone https://github.com/annrie/Foundation-Vue.git projectname
 cp projectname
 ```
@@ -38,7 +42,7 @@ You can also use NPM, but I'm using [yarn2](https://yarnpkg.com/getting-started/
 # install dependencies
 npm install
 or
-npx @yarnpkg/doctor # Setup for yarn2
+yarn set version berry # Setup for yarn2
 echo "nodeLinker: node-modules" > .yarnrc.yml
 yarn install
 ```
@@ -49,7 +53,7 @@ Finally, run `npm start` or `yarn start` to run Gulp. The finished site will be 
 http://localhost:8000
 ```
 
-To create a compressed, ready-to-use asset, run `npm run build` or `yarn build`.
+To create a compressed, ready-to-use asset, run `npm run build` or `yarn run build`.
 
 ## acknowledgement
 

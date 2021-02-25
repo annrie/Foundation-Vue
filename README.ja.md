@@ -20,11 +20,15 @@ Foundation フレームワークと Vue.JS を連携させたかった。
 </div>
 ```
 
+## 必要条件
+
+**このプロジェクトでは、[Node.js](http://nodejs.org) v12.1.0以上、v14.15.5以下を推奨しています。
+
 ## セットアップ
 
 テンプレートを手動でセットアップするには、まず Git でダウンロードします：
 
-```bash {.copy}
+```bash
 git clone https://github.com/annrie/Foundation-Vue.git projectname
 cd projectname
 ```
@@ -38,7 +42,7 @@ npm も使えますが、[yarn2](https://yarnpkg.com/getting-started/install) �
 ＃ install dependencies
 npm install
 or
-npx @yarnpkg/doctor # yarn2のセットアップ
+yarn set version berry # yarn2のセットアップ
 echo "nodeLinker: node-modules" > .yarnrc.yml
 yarn install
 ```
