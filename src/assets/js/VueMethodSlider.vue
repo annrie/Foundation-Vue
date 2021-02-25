@@ -30,6 +30,7 @@
 
 <script>
 import $ from "jquery";
+
 export default {
   name: "Slider",
   data() {

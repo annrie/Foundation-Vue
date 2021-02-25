@@ -3,20 +3,21 @@ import $ from "jquery";
 import whatInput from "what-input";
 
 import Vue from "vue";
-import vueCustomElement from "vue-custom-element";
-// import LogoElement from 'logo-element';
-
+import wrap from "@vue/web-component-wrapper";
 import MyCustomElement from "./MyCustomElement";
 import MyLogoElement from "./LogoElement";
-import VueSlider from "./VueMethodSlider";
+import VueMethodSlider from "./VueMethodSlider";
 import WindowSizeElement from "./WindowSizeElement";
 
-Vue.use(vueCustomElement);
+const CustomElement = wrap(Vue, MyCustomElement);
+const CustomElement2 = wrap(Vue, MyLogoElement);
+const CustomElement3 = wrap(Vue, VueMethodSlider, { shadow: false });
+const CustomElement4 = wrap(Vue, WindowSizeElement);
 
-Vue.customElement("my-custom-element", MyCustomElement);
-Vue.customElement("logo-element", MyLogoElement);
-Vue.customElement("vue-method-slider", VueSlider);
-Vue.customElement("window-size-element", WindowSizeElement);
+window.customElements.define("my-custom-element", CustomElement);
+window.customElements.define("logo-element", CustomElement2);
+window.customElements.define("vue-method-slider", CustomElement3);
+window.customElements.define("window-size-element", CustomElement4);
 
 // Foundation JS relies on a global variable. In ES6, all imports are hoisted
 // to the top of the file so if we used `import` to import Foundation,

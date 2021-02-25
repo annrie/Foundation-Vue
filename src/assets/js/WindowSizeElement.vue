@@ -1,14 +1,15 @@
+<!-- eslint-disable -->
 <template>
   <div>
     <div class="only-top">
-      <div>{{ $mq }} size</div>
-      <div v-if="small">small size</div>
-      <div v-else-if="medium">medium size</div>
-      <div v-else-if="tablet">tablet size</div>
-      <div v-else-if="largePlus">large+ size</div>
-      <div v-else-if="large">large size</div>
-      <div v-else-if="xlarge">xlarge size</div>
-      <div v-else>xxlarge size</div>
+      <div>{{ $mq }}サイズ</div>
+      <div v-if="small">smallサイズ</div>
+      <div v-else-if="medium">mediumサイズ</div>
+      <div v-else-if="tablet">tabletサイズ</div>
+      <div v-else-if="largePlus">large+サイズ</div>
+      <div v-else-if="large">largeサイズ</div>
+      <div v-else-if="xlarge">xlargeサイズ</div>
+      <div v-else>xxlargeサイズ</div>
     </div>
     <div>window width: {{ windowWidth }} px</div>
     <div>window height: {{ windowHeight }} px</div>
@@ -32,22 +33,21 @@ Vue.use(VueMq, {
   defaultBreakpoint: "small",
 });
 
-// eslint-disable-next-line vue/one-component-per-file
 Vue.mixin({
   data() {
     return {
-      small: false,
-      medium: false,
-      tablet: false,
-      largePlus: false,
-      large: false,
-      xlarge: false,
-      xxlarge: false,
+      small: false, // until 640px
+      medium: false, // until 769px
+      // tabletOnly: false, // from 769px and until 1025px
+      tablet: false, // from 1025px
+      largePlus: false, // from 1025px and until 1201px
+      large: false, // from 1025px
+      xlarge: false, // from 1201px
+      xxlarge: false, // from 1441px
     };
   },
 });
 
-// eslint-disable-next-line vue/one-component-per-file
 export default {
   data() {
     return {
@@ -61,6 +61,8 @@ export default {
       this.small = this.$mq === "small";
       this.medium = this.$mq === "medium";
       this.tablet = this.$mq === "tablet";
+      // this.tabletOnly = this.$mq === 'tablet'
+      // this.tablet = this.$mq === 'tablet' || this.$mq === 'desktop'
       this.largePlus = this.$mq === "xlarge" || this.$mq === "xxlarge";
       this.large = this.$mq === "large";
       this.xlarge = this.$mq === "xlarge";
@@ -86,7 +88,7 @@ export default {
   },
   methods: {
     calculateWindowWidth() {
-      // Every time you resize it, it fires.
+      // resizeのたびに発火する
       this.windowWidth = window.innerWidth;
     },
     calculateWindowHeight() {

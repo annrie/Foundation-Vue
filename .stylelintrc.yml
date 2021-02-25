@@ -2,20 +2,23 @@ plugins:
   - stylelint-scss
   - stylelint-declaration-block-no-ignored-properties
 extends:
-  - stylelint-config-standard-scss
-  - stylelint-config-recess-order
+  - stylelint-config-recommended-scss
+  # - stylelint-config-standard-scss
+  # - stylelint-config-recess-order
   - stylelint-config-prettier
   - stylelint-prettier/recommended
 syntax:
   - scss
 rules:
+  # prettier/prettier: true,
   indentation: [2, { baseIndentLevel: 0 }]
   # scss/dollar-variable-colon-space-after: always
   scss/dollar-variable-colon-space-before: never
   scss/operator-no-unspaced: true
   scss/at-rule-no-unknown: true
-  # at-rule-no-unknown: null
-  at-rule-whitelist:
+  at-rule-disallowed-list: ["debug"]
+  declaration-property-value-disallowed-list: [{'/^border/': ['none']}]
+  at-rule-allowed-list:
     [
       "extend",
       "keyframes",
@@ -92,14 +95,9 @@ rules:
   function-max-empty-lines: 0
   max-empty-lines: 1
   selector-max-empty-lines: 0
-  at-rule-blacklist: ["debug"]
-  # declaration-property-value-blacklist: [{'/^border/': ['none']}]
-  declaration-property-value-blacklist: null
-  color-named: null
-  color-no-hex: null
   color-no-invalid-hex: true
-  # function-blacklist: ["/^rgb/", "/^hsl/"]
-  function-whitelist:
+  # function-disallowed-list: ["/^rgb/", "/^hsl/"]
+  function-allowed-list:
     [
       "my-color",
       "/^rem/",
@@ -126,8 +124,10 @@ rules:
       /calc/,
       /map-merge/,
       /translate/,
+      /ratio-to-percentage/,
+      /invert/,
     ]
-  unit-whitelist:
+  unit-allowed-list:
     ["em", "rem", "%", "s", "ms", "vh", "vw", "px", "deg", "dpi", "fr", "vmin", "turn"]
   selector-pseudo-class-no-unknown: [true, { ignorePseudoClasses: [global] }]
   declaration-no-important: null
@@ -139,4 +139,5 @@ rules:
     - true
     - ignoreUnits:
         - /^[-+][\d$(]/
+  no-invalid-double-slash-comments: null
   # value-keyword-case: lower

@@ -1,23 +1,40 @@
+// see <https://css-tricks.com/couple-takes-sticky-footer/#there-is-flexbox>
+// flex box
+html,
 body {
-  // @include font-family(serif);
+  height: 100%;
+}
+body {
+  display: flex;
+  flex-direction: column;
   overflow-x: hidden;
   color: $black;
 }
-.skip {
-  overflow: auto;
+.off-canvas-wrapper {
+  flex: 1 0 auto;
 }
+.back-to-top-sticky {
+  flex-shrink: 0;
+}
+
+//// grid
+// html {
+//   height: 100%;
+// }
+// body {
+//   // @include font-family(serif);
+//   min-height: 100%;
+//   display: grid;
+//   grid-template-rows: 1fr auto;
+//   overflow-x: hidden;
+//   color: $black;
+// }
+// .back-to-top-sticky {
+//   grid-row-start: 2;
+//   grid-row-end: 3;
+// }
 .container {
   text-align: center;
-}
-.default {
-  main {
-    // @include absolute-center;
-    margin-top: 5em;
-    // height: 100vh;
-    a {
-      outline: none;
-    }
-  }
 }
 .index {
   main {
