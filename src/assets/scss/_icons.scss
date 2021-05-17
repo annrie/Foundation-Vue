@@ -2,12 +2,12 @@
   font-family: fontello;
   font-style: normal;
   font-weight: normal;
-  src: url("/fonts/fontello.eot"),
-    url("/fonts/fontello.eot#iefix") format("embedded-opentype"),
-    url("/fonts/fontello.woff2") format("woff2"),
-    url("/fonts/fontello.woff") format("woff"),
-    url("/fonts/fontello.ttf") format("truetype"),
-    url("/fonts/fontello.svg#fontello") format("svg");
+  src: url('/fonts/fontello.eot'),
+    url('/fonts/fontello.eot#iefix') format('embedded-opentype'),
+    url('/fonts/fontello.woff2') format('woff2'),
+    url('/fonts/fontello.woff') format('woff'),
+    url('/fonts/fontello.ttf') format('truetype'),
+    url('/fonts/fontello.svg#fontello') format('svg');
 }
 
 /* Chrome hack: SVG is rendered more smooth in Windozze. 100% magic, uncomment if you need it. */
@@ -20,8 +20,8 @@
 //     src: url('../font/fontello.svg?21286189#fontello') format('svg');
 //   }
 // }
-[class^="con-"]::before,
-[class*="icon-"]::before {
+[class^='con-']::before,
+[class*='icon-']::before {
   display: inline-block;
   width: 1em;
 
@@ -55,12 +55,12 @@
   /* text-shadow: 1px 1px 1px rgba(127, 127, 127, 0.3); */
 }
 .fab::before {
-  content: "\f09b";
+  content: '\f09b';
 }
 
 /* '' */
 .fas::before {
-  content: "\F12E";
+  content: '\F12E';
 }
 
 /* '' */

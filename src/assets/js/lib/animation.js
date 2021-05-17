@@ -1,6 +1,6 @@
 // const chapter1 = document.querySelector(".chapter-1");
 // const chapter2 = document.querySelector(".chapter-2");
-const chapter3 = document.querySelector(".chapter-3");
+const chapter3 = document.querySelector('.chapter-3');
 // const chapter1End = document.querySelector(
 //   ".chapter-1__view-1 div:nth-child(4)"
 // );
@@ -10,7 +10,7 @@ const chapter3 = document.querySelector(".chapter-3");
 
 const startChapter3 = () => {
   //  document.body.removeChild(chapter2);
-  chapter3.setAttribute("data-state", "active");
+  chapter3.setAttribute('data-state', 'active');
 };
 
 // const startChapter2 = () => {

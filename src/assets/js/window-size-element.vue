@@ -1,4 +1,3 @@
-<!-- eslint-disable -->
 <template>
   <div>
     <div class="only-top">
@@ -38,7 +37,6 @@ Vue.mixin({
     return {
       small: false, // until 640px
       medium: false, // until 769px
-      // tabletOnly: false, // from 769px and until 1025px
       tablet: false, // from 1025px
       largePlus: false, // from 1025px and until 1201px
       large: false, // from 1025px
@@ -61,8 +59,6 @@ export default {
       this.small = this.$mq === 'small';
       this.medium = this.$mq === 'medium';
       this.tablet = this.$mq === 'tablet';
-      // this.tabletOnly = this.$mq === 'tablet'
-      // this.tablet = this.$mq === 'tablet' || this.$mq === 'desktop'
       this.largePlus = this.$mq === 'xlarge' || this.$mq === 'xxlarge';
       this.large = this.$mq === 'large';
       this.xlarge = this.$mq === 'xlarge';

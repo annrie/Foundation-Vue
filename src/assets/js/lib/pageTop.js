@@ -1,9 +1,9 @@
-import $ from "jquery";
+import $ from 'jquery';
 
-$(function() {
-  var pageTop = $(".back_to_top");
+$(function () {
+  var pageTop = $('.back_to_top');
   pageTop.hide();
-  $(window).scroll(function() {
+  $(window).scroll(function () {
     if ($(this).scrollTop() > 400) {
       pageTop.fadeIn();
     } else {

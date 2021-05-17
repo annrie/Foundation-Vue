@@ -1,0 +1,97 @@
+{
+  "workbench.iconTheme": "material-icon-theme",
+  "workbench.fontAliasing": "default",
+  "editor.fontFamily": "'SF Mono'",
+  "editor.detectIndentation": false,
+  "editor.insertSpaces": false,
+"editor.tabSize": 2,
+  "prettier.trailingComma": "all",
+  "prettier.vueIndentScriptAndStyle": true,
+  // "typescript.format.insertSpaceAfterOpeningAndBeforeClosingNonemptyBraces": false,
+  // "typescript.format.insertSpaceAfterKeywordsInControlFlowStatements": false,
+  // "typescript.format.insertSpaceAfterFunctionKeywordForAnonymousFunctions": false,
+  // "typescript.format.insertSpaceAfterCommaDelimiter": false,
+  // "typescript.format.insertSpaceAfterSemicolonInForStatements": false,
+  // "typescript.format.insertSpaceBeforeAndAfterBinaryOperators": false,
+  // "typescript.preferences.useAliasesForRenames": false,
+  // "typescript.suggest.autoImports": false,
+  // "typescript.suggest.completeJSDocs": false,
+  // "typescript.suggest.enabled": false,
+  // "typescript.suggest.includeAutomaticOptionalChainCompletions": false,
+  // "typescript.suggest.paths": false,
+  // "typescript.suggestionActions.enabled": false,
+  "editor.formatOnSave": false,
+  // "editor.lineHeight": 0,
+  // "editor.letterSpacing": 0,
+  "vetur.validation.template": false,
+  "vetur.format.defaultFormatter.html": "prettier",
+  "vetur.format.defaultFormatterOptions": {
+    "prettier": {
+      "singleQuote": false,
+      "styleLintIntegration": true,
+      "tabWidth": 2
+    }
+  },
+  // "files.autoSave": "off",
+  "emmet.variables": {
+    "lang": "ja"
+  },
+  "emmet.showAbbreviationSuggestions": true,
+  "emmet.showExpandedAbbreviation": "always",
+  "emmet.includeLanguages": {
+    "vue-html": "html",
+    "vue": "html"
+  },
+  "[vue]": {
+    "editor.defaultFormatter": "dbaeumer.vscode-eslint"
+  },
+  "[javascript]": {
+    "editor.defaultFormatter": "dbaeumer.vscode-eslint"
+  },
+  "[markdown]": {
+    "files.trimTrailingWhitespace": false,
+    "editor.formatOnSave": true,
+    "editor.wordWrap": "on",
+    "editor.renderWhitespace": "all",
+    "editor.acceptSuggestionOnEnter": "off"
+  },
+  "css.validate": false,
+  "scss.validate": false,
+  "stylelint.autoFixOnSave": true,
+  "[css]": {
+    "editor.formatOnSave": false
+  },
+  "[scss]": {
+    "editor.formatOnSave": false
+  },
+  "editor.semanticHighlighting.enabled": true,
+  // "editor.codeActionsOnSave": {
+  //   "source.fixAll.eslint": true
+  // },
+
+  "terminal.integrated.cwd": "",
+  "terminal.integrated.shell.osx": "/usr/local/bin/bash",
+  "terminal.integrated.shellArgs.osx": ["-l"],
+  // Shift+Alt+FでESLint機能拡張のフォーマットを行えるようにする
+  "eslint.format.enable": true,
+  "javascript.format.enable": false,
+  "typescript.format.enable": false,
+  "vetur.format.enable": false,
+  "files.associations": {
+    "*.vue": "vue",
+  },
+  "eslint.options": {
+    "extentions": [".js", ".vue"]
+  },
+  "eslint.validate": [
+    "javascript",
+    "javascriptreact",
+    "vue"
+  ],
+  "editor.codeActionsOnSave": {
+    "source.fixAll.eslint": true
+  },
+    "prettier.eslintIntegration": true,
+    "prettier.autoFixOnSave": true,
+    "vue3snippets.enable-compile-vue-file-on-did-save-code": false,
+}

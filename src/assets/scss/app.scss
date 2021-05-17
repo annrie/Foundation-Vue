@@ -1,10 +1,10 @@
 @charset 'utf-8';
 
-@import "settings";
-@import "foundation";
-@import "motion-ui";
-@import "global/colors";
-@import "override";
+@import 'settings';
+@import 'foundation';
+@import 'motion-ui';
+@import 'global/colors';
+@import 'override';
 
 // Global styles
 @include foundation-global-styles;
@@ -71,19 +71,19 @@
 */
 
 // Global
-@import "./icons";
-@import "global/accessibility";
-@import "global/mixin";
+@import './icons';
+@import 'global/accessibility';
+@import 'global/mixin';
 
 // contents
-@import "components/content";
-@import "components/footer";
-@import "components/navigation";
-@import "components/keyframe";
-@import "components/animation";
+@import 'components/content';
+@import 'components/footer';
+@import 'components/navigation';
+@import 'components/keyframe';
+@import 'components/animation';
 
 // customizer
-@import "custom";
+@import 'custom';
 
 // Print
-@import "global/print";
+@import 'global/print';

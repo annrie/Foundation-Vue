@@ -1,27 +1,27 @@
 /** @format */
 
-"use strict";
+'use strict';
 
-import plugins from "gulp-load-plugins";
-import yargs from "yargs";
-import browser from "browser-sync";
-import gulp from "gulp";
-import panini from "panini";
-import rimraf from "rimraf";
-import sherpa from "style-sherpa";
-import yaml from "js-yaml";
-import fs from "fs";
-import webpackStream from "webpack-stream";
-import webpack2 from "webpack";
-import named from "vinyl-named";
+import plugins from 'gulp-load-plugins';
+import yargs from 'yargs';
+import browser from 'browser-sync';
+import gulp from 'gulp';
+import panini from 'panini';
+import rimraf from 'rimraf';
+import sherpa from 'style-sherpa';
+import yaml from 'js-yaml';
+import fs from 'fs';
+import webpackStream from 'webpack-stream';
+import webpack2 from 'webpack';
+import named from 'vinyl-named';
 // eslint-disable-next-line no-unused-vars
-import uncss from "uncss";
+import uncss from 'uncss';
 // eslint-disable-next-line no-unused-vars
-import gulpSass from "gulp-sass";
-import gulpStylelint from "gulp-stylelint";
-import changed from "gulp-changed-in-place";
-import autoprefixer from "autoprefixer";
-import { VueLoaderPlugin } from "vue-loader";
+import gulpSass from 'gulp-sass';
+import gulpStylelint from 'gulp-stylelint';
+import changed from 'gulp-changed-in-place';
+import autoprefixer from 'autoprefixer';
+import { VueLoaderPlugin } from 'vue-loader';
 
 // Load all Gulp plugins into one variable
 const $ = plugins();
@@ -34,12 +34,12 @@ const PRODUCTION = !!yargs.argv.production;
 const { PORT, UNCSS_OPTIONS, PATHS } = loadConfig();
 
 function loadConfig() {
-  let ymlFile = fs.readFileSync("config.yml", "utf8");
-  return yaml.safeLoad(ymlFile);
+  let ymlFile = fs.readFileSync('config.yml', 'utf8');
+  return yaml.load(ymlFile);
 }
 const originalEmitWarning = process.emitWarning;
 process.emitWarning = function (warning, type, code, ctor) {
-  if (code === "DEP0097") {
+  if (code === 'DEP0097') {
     // Undertaker uses a deprecated approach that causes NodeJS 10 to print
     // this warning to stderr:
     //
@@ -56,17 +56,17 @@ process.emitWarning = function (warning, type, code, ctor) {
 // Build the "dist" folder by running all of the below tasks
 // Sass must be run later so UnCSS can search for used classes in the others assets.
 gulp.task(
-  "build",
+  'build',
   gulp.series(
     clean,
     gulp.parallel(pages, sass, javascript, images, copy),
     sass,
-    styleGuide
-  )
+    styleGuide,
+  ),
 ); // sassを追�
 
 // Build the site, run the server, and watch for file changes
-gulp.task("default", gulp.series("build", server, watch));
+gulp.task('default', gulp.series('build', server, watch));
 
 // Delete the "dist" folder
 // This happens every time a build starts
@@ -77,21 +77,21 @@ function clean(done) {
 // Copy files out of the assets folder
 // This task skips over the "img", "js", and "scss" folders, which are parsed separately
 function copy() {
-  return gulp.src(PATHS.assets).pipe(gulp.dest(PATHS.dist + "/assets"));
+  return gulp.src(PATHS.assets).pipe(gulp.dest(PATHS.dist + '/assets'));
 }
 
 // Copy page templates into finished HTML files
 function pages() {
   return gulp
-    .src("src/pages/**/*.{html,hbs,handlebars}")
+    .src('src/pages/**/*.{html,hbs,handlebars}')
     .pipe(
       panini({
-        root: "src/pages/",
-        layouts: "src/layouts/",
-        partials: "src/partials/",
-        data: "src/data/",
-        helpers: "src/helpers/",
-      })
+        root: 'src/pages/',
+        layouts: 'src/layouts/',
+        partials: 'src/partials/',
+        data: 'src/data/',
+        helpers: 'src/helpers/',
+      }),
     )
     .pipe(gulp.dest(PATHS.dist));
 }
@@ -105,12 +105,12 @@ function resetPages(done) {
 // Generate a style guide from the Markdown content and HTML template in styleguide/
 function styleGuide(done) {
   sherpa(
-    "src/styleguide/index.md",
+    'src/styleguide/index.md',
     {
-      output: PATHS.dist + "/styleguide.html",
-      template: "src/styleguide/template.html",
+      output: PATHS.dist + '/styleguide.html',
+      template: 'src/styleguide/template.html',
     },
-    done
+    done,
   );
 }
 
@@ -126,35 +126,35 @@ function sass() {
   ].filter(Boolean);
 
   return gulp
-    .src("src/assets/scss/app.scss")
+    .src('src/assets/scss/app.scss')
     .pipe($.sourcemaps.init())
     .pipe(
       $.sass({
         includePaths: PATHS.sass,
-      }).on("error", $.sass.logError)
+      }).on('error', $.sass.logError),
     )
     .pipe($.postcss(postCssPlugins))
-    .pipe($.if(PRODUCTION, $.cleanCss({ compatibility: "ie9" })))
+    .pipe($.if(PRODUCTION, $.cleanCss({ compatibility: 'ie9' })))
     .pipe($.if(!PRODUCTION, $.sourcemaps.write()))
-    .pipe(gulp.dest(PATHS.dist + "/assets/css"))
+    .pipe(gulp.dest(PATHS.dist + '/assets/css'))
     .pipe(browser.reload({ stream: true }));
 }
 
 function stylelint() {
   return gulp
-    .src("src/assets/scss/**/*.scss")
+    .src('src/assets/scss/**/*.scss')
     .pipe(changed({ firstPass: true }))
     .pipe(
       gulpStylelint({
         failAfterError: PRODUCTION,
-        reporters: [{ formatter: "verbose", console: true }],
-        syntax: "scss",
-      })
+        reporters: [{ formatter: 'verbose', console: true }],
+        syntax: 'scss',
+      }),
     );
 }
 
 let webpackConfig = {
-  mode: PRODUCTION ? "production" : "development",
+  mode: PRODUCTION ? 'production' : 'development',
   performance: {
     hints: false,
     maxEntrypointSize: 50000000,
@@ -162,72 +162,72 @@ let webpackConfig = {
   },
   resolve: {
     alias: {
-      vue$: "vue/dist/vue.esm.js",
+      vue$: 'vue/dist/vue.esm.js',
     },
-    extensions: ["*", ".js", ".vue", ".json"],
+    extensions: ['*', '.js', '.vue', '.json'],
   },
   module: {
     rules: [
       {
-        enforce: "pre",
+        enforce: 'pre',
         test: /\.(js|vue)$/,
-        loader: "eslint-loader",
+        loader: 'eslint-loader',
         // include: [resolve('src'), resolve('test')],
         options: {
-          formatter: require("eslint-friendly-formatter"),
+          formatter: require('eslint-friendly-formatter'),
         },
       },
       {
         test: /\.js$/,
         use: {
-          loader: "babel-loader",
+          loader: 'babel-loader',
           options: {
-            presets: ["@babel/preset-env"],
+            presets: ['@babel/preset-env'],
             compact: false,
           },
         },
       },
       {
         test: /\.vue$/,
-        loader: "vue-loader",
+        loader: 'vue-loader',
         options: {
           prettify: true,
           transformAssetUrls: {
-            video: ["src", "poster"],
-            source: "src",
-            img: "src",
-            image: "xlink:href",
+            video: ['src', 'poster'],
+            source: 'src',
+            img: 'src',
+            image: 'xlink:href',
           },
         },
       },
       {
         test: /\.(png|jpe?g|gif|svg)(\?.*)?$/,
-        loader: "file-loader",
+        loader: 'file-loader',
         options: {
           limit: 10000,
-          name: "img/[name].[ext]",
+          name: 'img/[name].[ext]',
         },
       },
       {
         test: /\.(mp4|webm|ogg|mp3|wav|flac|aac)(\?.*)?$/,
-        loader: "url-loader",
+        loader: 'url-loader',
         options: {
           limit: 10000,
-          name: "media/[name].[hash:7].[ext]",
+          name: 'media/[name].[hash:7].[ext]',
         },
       },
       {
         test: /\.(woff2?|eot|ttf|otf)(\?.*)?$/,
-        loader: "url-loader",
+        loader: 'url-loader',
         options: {
           limit: 10000,
-          name: "fonts/[name].[hash:7].[ext]",
+          name: 'fonts/[name].[hash:7].[ext]',
         },
       },
     ],
   },
   plugins: [new VueLoaderPlugin()],
-  devtool: !PRODUCTION && "source-map",
+  devtool: !PRODUCTION && 'source-map',
 };
 
 // Combine JavaScript into one file
@@ -241,24 +241,24 @@ function javascript() {
     .pipe(
       $.if(
         PRODUCTION,
-        $.terser().on("error", (e) => {
+        $.terser().on('error', (e) => {
           console.log(e);
-        })
-      )
+        }),
+      ),
     )
     .pipe($.if(!PRODUCTION, $.sourcemaps.write()))
-    .pipe(gulp.dest(PATHS.dist + "/assets/js"));
+    .pipe(gulp.dest(PATHS.dist + '/assets/js'));
 }
 
 // Copy images to the "dist" folder
 // In production, the images are compressed
 function images() {
   return gulp
-    .src("src/assets/img/**/*")
+    .src('src/assets/img/**/*')
     .pipe(
-      $.if(PRODUCTION, $.imagemin([$.imagemin.optipng({ progressive: true })]))
+      $.if(PRODUCTION, $.imagemin([$.imagemin.optipng({ progressive: true })])),
     )
-    .pipe(gulp.dest(PATHS.dist + "/assets/img"));
+    .pipe(gulp.dest(PATHS.dist + '/assets/img'));
 }
 
 // Start a server with BrowserSync to preview the site in
@@ -268,7 +268,7 @@ function server(done) {
       server: PATHS.dist,
       port: PORT,
     },
-    done
+    done,
   );
 }
 
@@ -283,30 +283,30 @@ function reload(done) {
 function watch() {
   gulp.watch(PATHS.assets, copy);
   gulp
-    .watch("src/pages/**/*.html")
-    .on("all", gulp.series(pages, browser.reload));
+    .watch('src/pages/**/*.html')
+    .on('all', gulp.series(pages, browser.reload));
   gulp
-    .watch("src/{layouts,partials}/**/*.html")
-    .on("all", gulp.series(resetPages, pages, browser.reload));
+    .watch('src/{layouts,partials}/**/*.html')
+    .on('all', gulp.series(resetPages, pages, browser.reload));
   gulp
-    .watch("src/data/**/*.{js,json,yml}")
-    .on("all", gulp.series(resetPages, pages, browser.reload));
+    .watch('src/data/**/*.{js,json,yml}')
+    .on('all', gulp.series(resetPages, pages, browser.reload));
   gulp
-    .watch("src/helpers/**/*.js")
-    .on("all", gulp.series(resetPages, pages, browser.reload));
+    .watch('src/helpers/**/*.js')
+    .on('all', gulp.series(resetPages, pages, browser.reload));
   gulp
-    .watch("src/assets/scss/**/*.scss")
-    .on("all", gulp.series(stylelint, sass));
+    .watch('src/assets/scss/**/*.scss')
+    .on('all', gulp.series(stylelint, sass));
   gulp
-    .watch("src/assets/js/**/*.js")
-    .on("all", gulp.series(javascript, browser.reload));
+    .watch('src/assets/js/**/*.js')
+    .on('all', gulp.series(javascript, browser.reload));
   gulp
-    .watch("src/assets/js/**/*.vue")
-    .on("all", gulp.series(javascript, browser.reload));
+    .watch('src/assets/js/**/*.vue')
+    .on('all', gulp.series(javascript, browser.reload));
   gulp
-    .watch("src/assets/img/**/*")
-    .on("all", gulp.series(images, browser.reload));
+    .watch('src/assets/img/**/*')
+    .on('all', gulp.series(images, browser.reload));
   gulp
-    .watch("src/styleguide/**")
-    .on("all", gulp.series(styleGuide, browser.reload));
+    .watch('src/styleguide/**')
+    .on('all', gulp.series(styleGuide, browser.reload));
 }
