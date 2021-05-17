@@ -7,6 +7,7 @@
 </template>
 
 <script>
+import Vue from 'vue';
 // ロードされ、Vueがグローバル変数として定義されているか確認
 // console.assert(typeof Vue !== "undefined");
 var items = [
